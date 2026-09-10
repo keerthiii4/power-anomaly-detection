@@ -1,0 +1,44 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Compiled Embedded C test executables
+test_power_safety
+test_state_machine
+test_protection
+test_ai_integration
+*.o
+*.out
+
+# Runtime logs
+monitoring/logs/*.csv
+
+# Generated AI output
+monitoring/ai_output.csv
+
+# IDE / editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# Python coverage
+.coverage
+htmlcov/
+
+# Machine learning temporary files
+*.pkl.tmp
