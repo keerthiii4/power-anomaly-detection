@@ -66,7 +66,7 @@ def run_case(system, name, voltage, current,
     print("\nSystem Result")
     print("Sensor Valid :", sensor_valid)
     print("Condition    :", result.get("condition"))
-    print("Score        :", "%.2f" % result.get("anomaly_score", 0.0))
+    print("Score        :", "%.2f" % result.get("score", 0.0))
     print("Severity     :", result.get("severity"))
     print("Fault        :", result.get("fault"))
     print("State        :", result.get("state"))

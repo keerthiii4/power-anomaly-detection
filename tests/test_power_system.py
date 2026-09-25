@@ -2,7 +2,9 @@ import os
 import sys
 
 # Add project root to Python import path
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_ROOT = os.path.dirname(
+    os.path.dirname(os.path.abspath(__file__))
+)
 
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
@@ -16,7 +18,7 @@ def print_test(name, result):
     print("-" * 40)
 
     print("Condition : " + str(result.get("condition")))
-    print("Score     : " + str(result.get("anomaly_score")))
+    print("Score     : " + "%.2f" % result.get("score", 0.0))
     print("Severity  : " + str(result.get("severity")))
     print("Fault     : " + str(result.get("fault")))
     print("State     : " + str(result.get("state")))

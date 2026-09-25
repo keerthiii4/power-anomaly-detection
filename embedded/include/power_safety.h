@@ -55,17 +55,19 @@ typedef struct
     ProtectionAction action;
 } SafetyResult;
 
-SensorStatus validate_sensor_reading(const PowerReading *reading);
+SensorStatus validate_sensor_reading(PowerReading reading);
 
-FaultType classify_fault(float anomaly_score);
+FaultType classify_fault_from_reading(PowerReading reading,
+                                      float anomaly_score);
 
-SafetyState determine_state(float anomaly_score,
-                            SensorStatus sensor_status);
+SafetyState determine_state(SensorStatus sensor_status,
+                            float anomaly_score);
 
 ProtectionAction determine_action(FaultType fault,
-                                  SafetyState state);
+                                  SafetyState state,
+                                  float anomaly_score);
 
-SafetyResult process_power_reading(const PowerReading *reading,
+SafetyResult process_power_reading(PowerReading reading,
                                    float anomaly_score);
 
 const char *fault_to_string(FaultType fault);
